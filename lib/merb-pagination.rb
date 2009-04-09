@@ -1,6 +1,7 @@
 # Needed to import merb and other gems
 require 'rubygems'
 require 'pathname'
+require 'cgi'
 
 # Add all external dependencies for the plugin here
 gem 'merb-core', '>=0.9.4'

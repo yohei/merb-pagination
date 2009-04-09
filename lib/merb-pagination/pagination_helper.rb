@@ -104,7 +104,7 @@ module Merb
             padding: 2px;
           }  
         } } if options[:default_css]
-        b << (current_page <= 1 ? options[:prev_label] : %Q{<a rel="prev" href="#{url}=#{current_page -1}">#{options[:prev_label]}</a>})
+        b << (current_page <= 1 ? options[:prev_label] : %Q{<a rel="prev" href="#{CGI.escapeHTML(url)}=#{current_page -1}">#{options[:prev_label]}</a>})
         
         b.ul do
           [pages[:left], pages[:center], pages[:right]].each do |p|
@@ -121,7 +121,7 @@ module Merb
           end
         end
         
-        b << (current_page >= page_count ? options[:next_label] : %Q{<a rel="next" href="#{url}=#{current_page +1}">#{options[:next_label]}</a>})
+        b << (current_page >= page_count ? options[:next_label] : %Q{<a rel="next" href="#{CGI.escapeHTML(url)}=#{current_page +1}">#{options[:next_label]}</a>})
       end
     end
     private
